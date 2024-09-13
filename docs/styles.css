@@ -20,9 +20,9 @@ html[lang="ar"] {
     text-align: right;
 }
 
-body[lang="ar"] .nav-list li {
+html[lang="ar"] .nav-list li {
     margin-right: 20px; /* Adjust the margin for RTL */
-    margin-left: 0;
+    margin-left: 20px;
 }
 
 
