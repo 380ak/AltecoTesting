@@ -28,6 +28,10 @@ body[lang="ar"] .nav-list li {
 body[lang="ar"] .product {
     flex-direction: row-reverse; /* Reverse layout for product images and details */
 }
+/* Add padding to the right of product details */
+body[lang="ar"] .product-details {
+    padding-right: 20px; /* Add padding on the right side for better spacing */
+}
 
 body[lang="ar"] .hero-content h1, 
 body[lang="ar"] .hero-content p {
