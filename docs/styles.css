@@ -15,7 +15,7 @@ body {
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
 /* Arabic-specific Styles */
-body[lang="ar"] {
+html[lang="ar"] {
     direction: rtl;
     text-align: right;
 }
@@ -25,23 +25,13 @@ body[lang="ar"] .nav-list li {
     margin-left: 0;
 }
 
-body[lang="ar"] .product {
-    flex-direction: row-reverse; /* Reverse layout for product images and details */
-}
+
+
+
+
 /* Add padding to the right of product details */
-body[lang="ar"] .product-details {
+html[lang="ar"] .product-details {
     padding-right: 20px; /* Add padding on the right side for better spacing */
-}
-
-body[lang="ar"] .hero-content h1, 
-body[lang="ar"] .hero-content p {
-    text-align: right;
-}
-
-/* Add padding around product images for Arabic version */
-body[lang="ar"] .product img {
-    padding: 10px; /* Add padding around the images */
-    margin-left: 20px; /* Add margin to the left to create space between text and image */
 }
 
 /* Light Theme */
@@ -80,6 +70,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
 .nav-list {
