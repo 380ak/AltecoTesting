@@ -14,6 +14,32 @@ body {
     color: #000;
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
+/* Arabic-specific Styles */
+body[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body[lang="ar"] .nav-list li {
+    margin-right: 20px; /* Adjust the margin for RTL */
+    margin-left: 0;
+}
+
+body[lang="ar"] .product {
+    flex-direction: row-reverse; /* Reverse layout for product images and details */
+}
+
+body[lang="ar"] .hero-content h1, 
+body[lang="ar"] .hero-content p {
+    text-align: right;
+}
+
+/* Add padding around product images for Arabic version */
+body[lang="ar"] .product img {
+    padding: 10px; /* Add padding around the images */
+    margin-left: 20px; /* Add margin to the left to create space between text and image */
+}
+
 /* Light Theme */
 body.light-theme {
     background-color: #fff !important;
