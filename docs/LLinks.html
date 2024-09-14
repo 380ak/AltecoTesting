@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>links</title>
+    <style>
+        
+.last-div-links {
+    border: 20px solid transparent; /* Creates space for border */
+    border-image: linear-gradient(45deg, #ff0000, #00ff00, #0000ff); /* Colorful gradient border */
+    border-image-slice: 1; /* Applies the gradient to the border */
+    background-color: #f4f4f4f6; /* Light background for contrast */
+    box-sizing: border-box; /* Ensures border size is included in the element’s total width and height */
+
+}
+
+.last-div-links ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+    max-width: 400px; /* Control the width of the list */
+    margin-left: auto;
+    margin-right: auto; /* Center the list */
+}
+
+.last-div-links ul li {
+    position: relative;
+    font-size: 1.2rem; /* Increase font size */
+    margin: 10px 0; /* Add spacing between items */
+    padding-left: 30px; /* Create space for the custom hollow bullet */
+}
+
+.last-div-links ul li::before {
+    content: none; /* Hollow circle bullet */
+    color: #333; /* Bullet color */
+    font-size: 1.5rem; /* Bullet size */
+    position: absolute;
+    left: 0; /* Align the bullet with the left side */
+    top: 0;
+    transform: translateY(10%); /* Center vertically */
+}
+
+.last-div-links ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.last-div-links ul li a:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+/* Arabic-specific styles */
+html[lang="ar"] .last-div-links ul li {
+    padding-left: 0; /* Remove left padding */
+    padding-right: 30px; /* Add right padding */
+}
+
+html[lang="ar"] .last-div-links ul li::before {
+    left: auto; /* Reset left */
+    right: 0; /* Move bullet to the right */
+}
+
+    </style>
+
+</head>
+
+<body>   
+
+<div class="last-div-links">
+    <ul><li>
+        <span>Links for the currently available pages on web </span>   </li>
+    <li><label><input type="checkbox" style="accent-color: orange;" checked>
+        <a href="index.html" target="_parent">AltecoHomePage EN الصفحة بالانجليزي</a></label></li>
+    <li><label><input type="checkbox" style="accent-color: orange;" checked>
+        <a href="index-ar.html" target="_parent">AltecoHomePage Arabic الصفحة بالعربي</a></label></li>
+    <li><label><input type="checkbox" style="accent-color: orange;" checked>
+        <a href="Testing_components/Alteco-videoBG.html" target="_parent">Alteco with Video Background playback فيديو في اول جزء من الصفحة</a></label></li>
+    <li><label><input type="checkbox" style="accent-color: yellow;" checked>
+        <a href="Testing_components/index-BG-slider.html" target="_parent">Testing Slider Background 4-images/fade 10s animation تقليب صور انيمشين مجموعة صور</a></label></li>
+    <li><label><input type="checkbox" style="accent-color: rgb(76, 156, 0);" unchecked>
+        <a href="FIRST-VERSION/index-en.html" target="_parent">latest version /good footer /good lang toggle/ good theme toggle</a></label></li>
+    <li><label><input type="checkbox" style="accent-color: red;" unchecked>
+        <a href="#" target="_parent"><span style="color: red;">add link !!!</span> album preview RIMINI</a></label></li>
+</ul></div>
+            
+
+</body>
+</html>
