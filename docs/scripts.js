@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeSelect = document.getElementById('theme-select');
     const currentLang = document.getElementById('current-lang');
     const currentTheme = document.getElementById('current-theme');
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
 
     // Set default language to English
     const defaultLanguage = 'en';
@@ -57,4 +60,16 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCurrentTheme('light-theme');
         }
     });
+   // Toggle hamburger and dropdown visibility
+   menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('active');
+    navList.classList.toggle('active');
 });
+
+
+
+});
+
+
+
+

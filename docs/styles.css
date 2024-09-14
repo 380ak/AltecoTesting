@@ -16,26 +16,20 @@ body {
 }
 /* Arabic-specific Styles */
 html[lang="ar"] {
-    direction: rtl;
-    text-align: right;
-}
-
+    direction: rtl; text-align: right;}
 html[lang="ar"] .nav-list li {
-    margin-right: 20px; /* Adjust the margin for RTL */
-    margin-left: 20px;
-}
-
-
-
-
-
-/* Add padding to the right of product details */
+    margin-right: 20px;  margin-left: 20px;}
 html[lang="ar"] .product-details {
-    padding-right: 20px; /* Add padding on the right side for better spacing */
-}
+    padding-right: 20px; }
 html[lang="en"] .product-details {
-    padding-left: 20px; /* Add padding on the right side for better spacing */
-}
+    padding-left: 20px; }
+
+
+
+
+
+
+
 
 /* Light Theme */
 body.light-theme {
@@ -50,14 +44,13 @@ body.dark-theme {
 }
 
 body.dark-theme .hero {
-    background-image: url('images/your-image-dark.jpg'); /* Use a darker background image for dark theme */
+    background-image: url('images/your-image-dark.jpg');
 }
 
 body.dark-theme .product {
     background-color: #333;
     border-color: #666;
 }
-
 
 header {
     background-color: #333;
@@ -69,6 +62,10 @@ header {
     z-index: 10;
 }
 
+
+
+
+
 header nav {
     display: flex;
     justify-content: space-between;
@@ -76,12 +73,15 @@ header nav {
     justify-content: center;
 }
 
+
 .nav-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
+    font-size: 1rem;
 }
+
 
 .nav-list li {
     margin-left: 20px;
@@ -91,6 +91,76 @@ header nav {
     color: white;
     text-decoration: none;
 }
+
+
+
+
+
+
+ /* Default Hamburger icon  */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 20px; 
+    width: 25px; 
+    height: 18px;
+    z-index: 1000;
+    left: auto;
+    right: 20px;
+}
+html[lang="ar"] .menu-toggle {
+    display: none; 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: auto; 
+}
+
+.menu-toggle .hamburger,
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: '';
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle .hamburger::before {
+    top: -8px;
+}
+
+.menu-toggle .hamburger::after {
+    top: 10px;
+}
+
+/* When the menu is active, show the 'X' */
+.menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+
+
+
+
+
 
 /* Hero Section */
 .hero {
@@ -115,7 +185,7 @@ header nav {
 }
 
 .hero-content h1, .hero-content p {
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(5, 5, 10);
 }
 
 .hero-content h1 {
@@ -136,6 +206,12 @@ header nav {
     object-fit: cover;
     z-index: 0;
 }
+
+
+
+
+
+
 
 /* Product Section */
 .product-section {
@@ -168,15 +244,47 @@ header nav {
     margin-left: 20px;
 }
 
-/* Dark Theme Styles for Hero and Product Sections */
-body.dark-theme .hero {
-    background-image: url('images/your-image-dark.jpg'); /* Use a darker background image for dark theme */
+
+
+
+
+/* Common styles for the logo container */
+.logo-container {
+    position: absolute;
+    top: 10px; /* Adjust vertical position as needed */
+    z-index: 1000;
 }
 
-body.dark-theme .product {
-    background-color: #333;
-    border-color: #666;
+.logo {
+    height: 20px; /* Adjust size as needed */
+    display: block;
+
 }
+
+/* English version: logo on the left */
+html[lang="en"] .logo-container {
+    left: 20px;
+}
+
+/* Arabic version: logo on the right */
+html[lang="ar"] .logo-container {
+    right: 20px;
+    left: auto; /* Remove left positioning */
+}
+
+/* Transparent background for the logo container */
+.logo-container {
+    background-color: transparent;
+}
+
+/* Ensure the logo has no border */
+.logo {
+    border: none;
+}
+
+
+
+
 
 /* Footer */
 footer {
@@ -216,6 +324,17 @@ select {
     border-radius: 4px;
     font-size: 1rem;
 }
+.current-values {
+    margin-top: 10px;
+}
+
+.current-values p {
+    margin: 5px 0;
+}
+
+
+
+
 
 /* Responsive Styles */
 @media (max-width: 700px) {
@@ -235,13 +354,41 @@ select {
     .hero-content p {
         font-size: 1rem;
     }
-}
+    .nav-list {
+        font-size: 1rem;
+    }
 
 
-.current-values {
-    margin-top: 10px;
-}
+    header nav {
+        height: 30px;
+    }
+    .menu-toggle {
+        display: block; /* Show hamburger on small screens */
+    }
+    html[lang="ar"] .menu-toggle {
+        display: block;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 999;
+        text-align: center;
+    }
 
-.current-values p {
-    margin: 5px 0;
+    .nav-list.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+    .logo {
+        height: 35px; /* Adjust size as needed */
+    }
+
 }
