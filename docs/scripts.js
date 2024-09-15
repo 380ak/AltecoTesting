@@ -71,14 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+const preloader = document.getElementById('preloader');
 
+// Hide preloader after 7 seconds no matter what
+const maxTime = setTimeout(function() {
+    preloader.style.display = 'none';
+}, 7000); // 7 seconds
+
+// Hide preloader once the page is fully loaded
 window.addEventListener('load', function() {
-    // Add a delay before hiding the preloader (e.g., 2 seconds = 2000ms)
+    clearTimeout(maxTime); // Clear the 7-second timeout if the page loads before
     setTimeout(function() {
-        const preloader = document.getElementById('preloader');
         preloader.style.display = 'none';
-    }, 1000); // Delay time in milliseconds (1000 = 1 seconds)
+    }, 1000); // 1 second delay after the page has fully loaded
 });
-
-
 
