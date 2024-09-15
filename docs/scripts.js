@@ -72,4 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+window.addEventListener('load', function() {
+    // Add a delay before hiding the preloader (e.g., 2 seconds = 2000ms)
+    setTimeout(function() {
+        const preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
+    }, 1000); // Delay time in milliseconds (1000 = 1 seconds)
+});
+
+
 
