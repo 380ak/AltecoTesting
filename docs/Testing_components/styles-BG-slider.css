@@ -130,3 +130,14 @@ body {
 .last-div-links ul li a:hover {
     color: #0056b3; /* Darker color on hover */
 }
+
+
+
+
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 767px) {
+    .containter {
+        height: 700px; /* Adjust to your desired height for mobile */
+    }
+}
