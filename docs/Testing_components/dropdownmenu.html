@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <link rel="stylesheet" href="stylesdropdownmenu.css">
+
+</head>
+<body>
+    <header>
+        <!-- <div class="header-icon"></div> -->
+        <div class="logo-container">
+            <img src="../images/logo.png" alt="Company Logo" class="logo">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="dropdown-content">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+    </header>
+    <section class="hero11">
+        <div class="hero11-content">
+            <h1>Welcome to Niroukh Group</h1>
+            <p>Your trusted partner for quality products.</p>
+        </div>
+    </section>
+    <div class="containter">
+        <div class="overlay"></div>
+        <img src="../images/BGmain/BGmain01.jpeg" alt="" class="BG-img">
+        <img src="../images/BGmain/BGmain02.jpeg" alt="" class="BG-img">
+        <img src="../images/BGmain/BGmain03.jpeg" alt="" class="BG-img">
+        <div class="text-overlay">
+            <h1 class="heading" >مرحبا بكم في شركة نيروخ</h1>
+            <p class="heading-description">مجموعة نيروخ التجارية هي الوكيل الرسمي والوحيد لشركة التكو في الاردن والسعودية منذ أكثر من 25 عام</p>
+             </div>
+    </div>
+
+<hr>
+
+ <!-- Hero Section -->
+ <div class="container16">
+    <div class="card-16">
+        <h2>Get to know Niroukh</h2>
+        <p>Niroukh Group is proud to be a trusted name in the market, offering innovative solutions and exceptional service.</p>
+        <p>Niroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovative solutions and exceptional service.</p>
+        <p>Niroukh Group is proud to be a trusted name in the market, offering innNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeovative solutions and exceptional service.</p>
+
+        <button>Learn More</button>
+    </div>
+</div>
+<hr>
+<h2> Our Services </h2>
+<div class="card-slider-container">
+    <h2>Our Services</h2>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="card">
+                <img src="../images/your-image1.jpg" alt="Service 1">
+                <h3>Service 1</h3>
+                <p>Description for service 1.</p>
+            </div>
+            <div class="card">
+                <img src="../images/your-image2.jpg" alt="Service 2">
+                <h3>Service 2</h3>
+                <p>Description for service 2.</p>
+            </div>
+            <div class="card">
+                <img src="../images/your-image3.jpg" alt="Service 3">
+                <h3>Service 3</h3>
+                <p>Description for service 3.</p>
+            </div>
+            <div class="card">
+                <img src="../images/your-image1.jpg" alt="Service 4">
+                <h3>Service 4</h3>
+                <p>Description for service 4.</p>
+            </div>
+        </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+<!-- About Us Section with Dark Mode Switch -->
+<section class="dark-mode-switch">
+    <label for="modeSwitch">Toggle Dark Mode:</label>
+    <label class="switch">
+        <input type="checkbox" id="modeSwitch" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+</section>
+
+<script>
+    const slider = document.querySelector('.slider');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+let scrollPosition = 0;
+
+function scrollSlider(direction) {
+    const cardWidth = document.querySelector('.card').offsetWidth + 20; // Includes margin
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+    if (direction === 'next') {
+        scrollPosition = Math.min(scrollPosition + cardWidth, maxScroll);
+    } else {
+        scrollPosition = Math.max(scrollPosition - cardWidth, 0);
+    }
+
+    slider.style.transform = `translateX(-${scrollPosition}px)`;
+}
+
+next.addEventListener('click', () => scrollSlider('next'));
+prev.addEventListener('click', () => scrollSlider('prev'));
+
+// Auto scroll every 5 seconds
+setInterval(() => scrollSlider('next'), 5000);
+
+</script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.dropdown-content');
+            const hamburger = document.querySelector('.hamburger-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu(event) {
+            const menu = document.querySelector('.dropdown-content');
+            const hamburger = document.querySelector('.hamburger-menu');
+            const isClickInsideMenu = menu.contains(event.target) || hamburger.contains(event.target);
+            if (!isClickInsideMenu) {
+                menu.style.display = 'none';
+                hamburger.classList.remove('active');
+            }
+        }
+
+        document.addEventListener('click', closeMenu);
+    </script>
+        <script>
+            // Toggle Dark Mode
+            function toggleDarkMode() {
+                document.body.classList.toggle('dark-mode');
+                document.body.classList.toggle('light-mode');
+            }
+        </script>
+</body>
+</html>

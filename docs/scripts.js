@@ -60,16 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCurrentTheme('light-theme');
         }
     });
-   // Toggle hamburger and dropdown visibility
-   menuToggle.addEventListener('click', function() {
+  // Toggle hamburger and dropdown visibility
+  menuToggle.addEventListener('click', function() {
     menuToggle.classList.toggle('active');
     navList.classList.toggle('active');
 });
 
-
-
 });
-
 
 const preloader = document.getElementById('preloader');
 
@@ -85,4 +82,3 @@ window.addEventListener('load', function() {
         preloader.style.display = 'none';
     }, 1000); // 1 second delay after the page has fully loaded
 });
-

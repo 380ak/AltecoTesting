@@ -13,6 +13,7 @@ body {
     background-color: #fff;
     color: #000;
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+ 
 }
 /* Arabic-specific Styles */
 html[lang="ar"] {
@@ -56,10 +57,14 @@ header {
     background-color: #333;
     color: white;
     width: 100%;
-    padding: 10px 20px;
+    height: 60px; /* Set fixed height */
+    padding: 0 20px; /* Padding left and right */
     box-sizing: border-box;
     position: relative;
-    z-index: 10;
+    position: fixed; /* or position: fixed if you want it to stay even after scrolling */
+    top: 0;
+    z-index: 1000;
+
 }
 
 
@@ -69,8 +74,10 @@ header {
 header nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
     justify-content: center;
+    height: 60px; /* Make the nav fill the header height */
+    align-items: center; /* Center the nav items vertically */
 }
 
 
@@ -97,15 +104,15 @@ header nav {
 
 
 
- /* Default Hamburger icon  */
+
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     cursor: pointer;
     position: fixed;
-    top: 15px;
+    top: 20px;
     left: 20px; 
-    width: 25px; 
-    height: 18px;
+    width: 30px; 
+    height: 21px;
     z-index: 1000;
     left: auto;
     right: 20px;
@@ -129,7 +136,7 @@ html[lang="ar"] .menu-toggle {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .menu-toggle .hamburger::before {
@@ -174,7 +181,7 @@ html[lang="ar"] .menu-toggle {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('images/your-image1.jpg'); /* Single background image */
+    background-image: url('images/your-image1.jpg');
 }
 
 .hero-content {
@@ -213,7 +220,7 @@ html[lang="ar"] .menu-toggle {
 
 
 
-/* Product Section */
+
 .product-section {
     display: flex;
     flex-wrap: wrap;
@@ -248,39 +255,28 @@ html[lang="ar"] .menu-toggle {
 
 
 
-/* Common styles for the logo container */
+
 .logo-container {
     position: absolute;
-    top: 10px; /* Adjust vertical position as needed */
+    top: 10px; 
     z-index: 1000;
+    background-color: transparent;
 }
-
 .logo {
-    height: 20px; /* Adjust size as needed */
     display: block;
+    border: none;
+    height: 40px;
+
 
 }
-
-/* English version: logo on the left */
 html[lang="en"] .logo-container {
     left: 20px;
 }
-
-/* Arabic version: logo on the right */
 html[lang="ar"] .logo-container {
     right: 20px;
     left: auto; /* Remove left positioning */
 }
 
-/* Transparent background for the logo container */
-.logo-container {
-    background-color: transparent;
-}
-
-/* Ensure the logo has no border */
-.logo {
-    border: none;
-}
 
 
 
@@ -333,11 +329,15 @@ select {
 }
 
 
-
+@media (max-width: 1024px) {
+    header nav {
+        justify-content: right;
+    }
+}
 
 
 /* Responsive Styles */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .product {
         flex-direction: column;
     }
@@ -354,13 +354,16 @@ select {
     .hero-content p {
         font-size: 1rem;
     }
-    .nav-list {
-        font-size: 1rem;
+
+
+    .product-details  {
+        padding-left: 0 !important;
+        margin-left: 0;
     }
 
 
     header nav {
-        height: 30px;
+        height: 60px;
     }
     .menu-toggle {
         display: block; /* Show hamburger on small screens */
@@ -368,16 +371,19 @@ select {
     html[lang="ar"] .menu-toggle {
         display: block;
     }
+    
     .nav-list {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 40px;
-        left: 0;
-        width: 100%;
+        top: 55px;
+        right: 10px;
+        width: 150px;
         background-color: #333;
         z-index: 999;
         text-align: center;
+        border-radius: 10px;
+        font-size: 1rem;
     }
 
     .nav-list.active {
@@ -387,92 +393,13 @@ select {
     .nav-list li {
         margin: 10px 0;
     }
-    .logo {
-        height: 35px; /* Adjust size as needed */
-    }
+
 
 }
 
 
 
 
-/* Ensure the container for the iframe takes up the desired height */
-.iframe-container {
-    height: 360px; /* Minimum height */
-    width: 100%;
-    overflow: hidden; /* Hide any potential scrollbars */
-  }
-  
-  /* Ensure the iframe fills the container */
-  iframe {
-    height: 100%;
-    width: 100%;
-    border: none;
-  }
-  
-  @media (max-width: 500px) {
-    .iframe-container {
-        height: 420px;
-    }
-  }
-  @media (max-width: 460px) {
-    .iframe-container {
-        height: 500px;
-    }
-  }
-  @media (max-width: 400px) {
-    .iframe-container {
-        height: 600px;
-    }
-  }
-  @media (max-width: 305px) {
-    .iframe-container {
-        height: 750px;
-    }
-  }
-  @media (max-width: 280px) {
-    .iframe-container {
-        height: 850px;
-    }
-  }
-
-  .video-options {
-    width: 100%;
-    text-align: center; /* Center the content */
-    margin: 0 auto; /* Center the div itself */
-}
-
-.video-options ul {
-    list-style-type: none; /* Remove bullets */
-    padding: 0;
-    margin: 0;
-}
-
-.video-options li {
-    margin: 10px 0; /* Space between list items */
-}
-
-.video-options a {
-    display: inline-block; /* Make links inline-block for padding and margins */
-    padding: 10px 20px; /* Add padding to the links */
-    text-decoration: none; /* Remove underline */
-    color: #fff; /* Text color */
-    background-color: #007bff; /* Background color */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-}
-.video-options li:last-child a {
-    background-color: #007bffc7; /* Red background color for the last link */
-}
-.video-options li:first-child a {
-    background-color: #0077ff9a; /* Red background color for the last link */
-    color: #000;
-}
-
-.video-options a:hover {
-    background-color: #0056b3; /* Darker background on hover */
-    color: #e0e0e0; /* Lighter text color on hover */
-}
 
 
 
