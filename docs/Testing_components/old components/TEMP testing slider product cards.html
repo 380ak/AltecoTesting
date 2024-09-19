@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+            
+        }
+        .slider-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .cardss {
+            flex: 0 0 300px;
+            height: 375px;
+            margin: 0 4px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .cardss img {
+            width: 300px;
+            height: 180px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .cardss h5 {
+            width: 300px;
+            height: 50px;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .cardss p {
+            padding: 0 10px;
+            flex-grow: 1;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .slider-button:hover {
+            background-color: #0056b3;
+        } */
+        
+
+        :root {
+    --primary-color: #ff9800; /* Example color for arrows */
+    --primary-hover-color: #f57c00; /* Hover color */
+    --shadow-color: rgba(255, 152, 0, 0.8); /* Shadow color */
+}
+
+
+.slider-button {
+    background: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-size: 6rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.3s, text-shadow 0.3s;
+    padding: 20px;
+    z-index: 10; /* Ensure buttons are on top */
+    transform: translateY(-0%); /* Adjust for true vertical centering */
+}
+
+.slider-button:hover {
+    color: var(--primary-hover-color);
+    text-shadow: 0 0 12px var(--shadow-color);
+}
+
+
+
+
+        
+        .slider-button.left {
+            left: 10px;
+        }
+        .slider-button.right {
+            right: 10px;
+        }
+
+        /* .empty-card {
+        visibility: hiden;
+         } */
+         .emptyhalfcard {
+            flex: 0 0 150px; /* Half the width of the standard card */
+            visibility: hidden;
+        }
+        .cardssDEL
+        {
+            visibility: hidden;
+        }
+        body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element */
+}
+
+
+.container {
+    max-width: 100%; /* Full width, but within the max-width of its parent */
+    padding: 20px;
+}
+
+
+
+.section {
+    margin: 20px auto; /* Center section and prevent extra margin causing overflow */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 100%; /* Ensure section does not exceed viewport width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.section h2 {
+    margin-top: 0;
+    color: #333;
+}
+        .section p {
+    color: #555;
+    font-size: 1rem; /* 16px */
+    line-height: 1.6; /* Improve readability */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center the paragraph */
+    text-align: center; /* Center text alignment */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Section: Chemistry Content -->
+        <div class="section">
+            <h2>Chemistry Overview</h2>
+            <p>This section provides an overview of chemistry, its principles, and its importance in various applications. Learn about chemical reactions, elements, compounds, and more.</p>
+        </div>
+
+    <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+            <div class="cardss emptyhalfcard"></div>  <!-- half card-->
+ 
+            <div class="cardss">
+                <a href="thenewhtmlnumber1.html">
+                    <img src="../images/your-image1.jpg" alt="Service 1">
+                    <h5>Service 1</h5>
+                </a>
+                <p>Description for service 1.</p>
+            </div>
+            <div class="cardss">
+                <a href="thenewhtmlnumber2.html">
+                    <img src="../images/your-image2.jpg" alt="Service 2">
+                    <h5>Service 2</h5>
+                </a>
+                <p>Description for service 2.</p>
+            </div>
+            <div class="cardss">
+                <a href="thenewhtmlnumber3.html">
+                    <img src="../images/your-image3.jpg" alt="Service 3">
+                    <h5>Service 3</h5>
+                </a>
+                <p>Description for service 3.</p>
+            </div>
+            <div class="cardss">
+                <a href="thenewhtmlnumber4.html">
+                    <img src="../images/your-image1.jpg" alt="Service 4">
+                    <h5>Service 4</h5>
+                </a>
+                <p>Description for service 4.</p>
+            </div>
+            <div class="cardss">
+                <a href="thenewhtmlnumber5.html">
+                    <img src="../images/your-image2.jpg" alt="Service 5">
+                    <h5>Service 5</h5>
+                </a>
+                <p>Description for service 5.</p>
+            </div>
+            
+            
+
+
+
+            <!-- <div class="cardss empty-card"></div>  empty card -->
+            <div class="cardss cardssDEL"></div> <!-- card to be hidden in big screen -->
+            <div class="cardss cardssDEL"></div> <!-- card to be hidden in big screen -->
+
+        </div>
+
+        <button class="slider-button left" id="leftButton" onclick="moveLeft()">‹</button>
+        <button class="slider-button right" id="rightButton" onclick="moveRight()">›</button>
+
+
+    </div>
+
+        <!-- Bottom Section: Additional Chemistry Content -->
+        <div class="section">
+            <h2>Chemistry Applications</h2>
+            <p>Explore how chemistry is applied in different fields such as medicine, agriculture, and industry. Understand the impact of chemical processes on everyday life and advancements in technology.</p>
+        </div>
+    </div>
+
+    <script>
+let currentPosition = 0;
+const sliderWrapper = document.getElementById('sliderWrapper');
+const standardCardWidth = 300 + 8; // 300px width + 4px margin on both sides
+const halfCardWidth = 150 + 8; // Half the width + 4px margin on both sides
+let isMoving = false;
+let autoSlideInterval;
+let startX, endX;
+
+// Update slider width based on card types
+function updateSliderWidth() {
+    const cards = document.querySelectorAll('.cardss, .emptyhalfcard');
+    let totalWidth = 0;
+    cards.forEach(card => {
+        if (card.classList.contains('emptyhalfcard')) {
+            totalWidth += halfCardWidth;
+        } else {
+            totalWidth += standardCardWidth;
+        }
+    });
+    sliderWrapper.style.width = `${totalWidth}px`;
+}
+
+// Generalized function to move the slider
+function moveSlider(direction) {
+    if (isMoving) return;
+    isMoving = true;
+
+    // Determine max move left
+    const maxVisibleCards = 3; // Show at most 3 cards at a time
+    const totalCards = document.querySelectorAll('.cardss, .emptyhalfcard').length;
+    const maxMoveLeft = -(totalCards - maxVisibleCards) * standardCardWidth; // Adjust as needed
+
+    // Move based on direction
+    if (direction === 'right') {
+        if (currentPosition > maxMoveLeft) {
+            currentPosition -= (standardCardWidth); // Use appropriate width
+        } else {
+            currentPosition = 0; // Bounce back to the start
+        }
+    } else if (direction === 'left') {
+        if (currentPosition < 0) {
+            currentPosition += (standardCardWidth); // Use appropriate width
+        } else {
+            currentPosition = maxMoveLeft; // Bounce back to the end
+        }
+    }
+
+    sliderWrapper.style.transform = `translateX(${currentPosition}px)`;
+
+    setTimeout(() => {
+        isMoving = false;
+    }, 500); // Reset isMoving after 0.5 seconds (CSS transition time)
+}
+
+// Move slider to the right
+function moveRight() {
+    moveSlider('right');
+}
+
+// Move slider to the left
+function moveLeft() {
+    moveSlider('left');
+}
+
+// Start the automatic sliding
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        moveRight();
+    }, 1000); // Interval for auto-slide
+}
+
+// Stop the automatic sliding
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+}
+
+// Touch events
+sliderWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+sliderWrapper.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+        moveRight();
+    } else if (endX - startX > 50) {
+        moveLeft();
+    }
+});
+
+// Function to adjust cards based on screen width
+function adjustCards() {
+    const screenWidth = window.innerWidth;
+
+    // Handle cardssDEL based on screen size
+    if (screenWidth > 1000) {
+        // Remove cardssDEL cards
+        document.querySelectorAll('.cardssDEL').forEach(card => card.remove());
+        // Ensure emptyhalfcard is visible
+        if (!document.querySelector('.emptyhalfcard')) {
+            const emptyHalfCard = document.createElement('div');
+            emptyHalfCard.className = 'cardss emptyhalfcard';
+            sliderWrapper.insertBefore(emptyHalfCard, sliderWrapper.firstChild); // Insert at the beginning
+        }
+    } else {
+        // Reinsert cardssDEL if needed
+        const existingCards = Array.from(sliderWrapper.children);
+        if (!existingCards.some(card => card.classList.contains('cardssDEL'))) {
+            const numEmptyCards = 2; // Number of cards to reinsert
+            const emptyCards = document.createDocumentFragment();
+            for (let i = 0; i < numEmptyCards; i++) {
+                const emptyCard = document.createElement('div');
+                emptyCard.className = 'cardss cardssDEL';
+                emptyCards.appendChild(emptyCard);
+            }
+            sliderWrapper.appendChild(emptyCards);
+        }
+
+        // Remove emptyhalfcard if screen is smaller
+        document.querySelectorAll('.emptyhalfcard').forEach(card => card.remove());
+    }
+
+    // Update slider width after adjustments
+    updateSliderWidth();
+}
+
+// Initial setup
+updateSliderWidth();
+startAutoSlide();
+
+// Adjust cards when the page loads and on window resize
+adjustCards();
+window.addEventListener('resize', adjustCards);
+
+    </script>
+    
+
+
+
+</body>
+</html>

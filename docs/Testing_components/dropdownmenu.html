@@ -6,13 +6,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
     <link rel="stylesheet" href="stylesdropdownmenu.css">
+    <link rel="stylesheet" href="sliderservicesstyles.css">
 
 </head>
 <body>
     <header>
         <!-- <div class="header-icon"></div> -->
         <div class="logo-container">
-            <img src="../images/logo.png" alt="Company Logo" class="logo">
+            <img src="../images/logo.png" alt="Company Logo" class="logo" id="logo">
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -53,60 +54,68 @@
         <p>Niroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovative solutions and exceptional service.</p>
         <p>Niroukh Group is proud to be a trusted name in the market, offering innNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeNiroukh Group is proud to be a trusted name in the market, offering innovativeovative solutions and exceptional service.</p>
 
-        <button>Learn More</button>
+        <button class="button-class">Learn More</button>
     </div>
 </div>
 <hr>
 <h2> Our Services </h2>
-<div class="card-slider-container">
-    <h2>Our Services</h2>
-    <div class="slider-wrapper">
-        <div class="slider">
-            <div class="card">
-                <img src="../images/your-image1.jpg" alt="Service 1">
-                <h3>Service 1</h3>
-                <p>Description for service 1.</p>
-            </div>
-            <div class="card">
-                <img src="../images/your-image2.jpg" alt="Service 2">
-                <h3>Service 2</h3>
-                <p>Description for service 2.</p>
-            </div>
-            <div class="card">
-                <img src="../images/your-image3.jpg" alt="Service 3">
-                <h3>Service 3</h3>
-                <p>Description for service 3.</p>
-            </div>
-            <div class="card">
-                <img src="../images/your-image1.jpg" alt="Service 4">
-                <h3>Service 4</h3>
-                <p>Description for service 4.</p>
-            </div>
-        </div>
-    </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+
+
+<div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="cardss emptyhalfcard"></div>  <!-- half card-->
+                <div class="cardss">
+                    <a href="thenewhtmlnumber1.html">
+                        <img src="../images/your-image1.jpg" alt="Service 1">
+                        <h5>Service 1</h5>                              </a>
+                    <p>Description for service 1.</p>                                               </div>
+                <div class="cardss">
+                    <a href="thenewhtmlnumber2.html">
+                        <img src="../images/your-image2.jpg" alt="Service 2">
+                        <h5>Service 2</h5>                              </a>
+                    <p>Description for service 2.</p>                                               </div>
+                <div class="cardss">
+                    <a href="thenewhtmlnumber3.html">
+                        <img src="../images/your-image3.jpg" alt="Service 3">
+                        <h5>Service 3</h5>                               </a>
+                    <p>Description for service 3.</p>                                                </div>
+                <div class="cardss">
+                    <a href="thenewhtmlnumber4.html">
+                        <img src="../images/your-image1.jpg" alt="Service 4">
+                        <h5>Service 4</h5>                                </a>
+                    <p>Description for service 4.</p>                                                </div>
+                <div class="cardss">
+                    <a href="thenewhtmlnumber5.html">
+                        <img src="../images/your-image2.jpg" alt="Service 5">
+                        <h5>Service 5</h5></a>
+                    <p>Description for service 5.</p></div>
+                <!-- <div class="cardss empty-card"></div>  empty card -->
+                <div class="cardss cardssDEL"></div> <!-- card to be hidden in big screen -->
+                <div class="cardss cardssDEL"></div> <!-- card to be hidden in big screen -->           </div>
+            <button class="slider-button left" id="leftButton" onclick="moveLeft()">‹</button>
+            <button class="slider-button right" id="rightButton" onclick="moveRight()">›</button>       
 </div>
-        <section class="hero11">
-        <div class="hero11-content">
-            <h1>Welcome to Niroukh Group</h1>
-            <p>Your trusted partner for quality products.</p>
-        </div>
-    </section>
+<hr>
+  
+<section class="hero11">
+    <div class="hero11-content">
+        <h1>Welcome to Niroukh Group</h1>
+        <p>Your trusted partner for quality products.</p>
+    </div>
+</section>
 
-        <section class="hero11">
-        <div class="hero11-content">
-            <h1>Welcome to Niroukh Group</h1>
-            <p>Your trusted partner for quality products.</p>
-        </div>
-    </section>
 
-        <section class="hero11">
-        <div class="hero11-content">
-            <h1>Welcome to Niroukh Group</h1>
-            <p>Your trusted partner for quality products.</p>
-        </div>
-    </section>
+<p>All Your Needs, One Place: Celebrations, Creations, and Beyond!</p>
+<p>Connecting Moments and Ventures: From Halls to Handcrafts!</p>
+<p>Versatile Services for Every Occasion: Where Ideas Meet Action!</p>
+<p>From Events to Enterprises: Your All-in-One Service Hub!</p>
+<p>Celebrate, Create, Collaborate: Your Gateway to Every Service!</p>
+<p>One Source for All: Halls, Imports, Exports, and More!</p>
+<p>From Gatherings to Goals: Your Complete Service Partner!</p>
+<p>Empowering Moments and Innovations: All Under One Roof!</p>
+<p>Your Diverse Service Destination: Where Every Need is Met!</p>
+<p>One Stop for Every Occasion: Celebrate, Build, and Succeed!</p>
+
 
 <!-- About Us Section with Dark Mode Switch -->
 <section class="dark-mode-switch">
@@ -117,60 +126,37 @@
     </label>
 </section>
 
-<script>
-    const slider = document.querySelector('.slider');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Contact Us</h3>
+            <p>Email: info@niroukhgroup.com</p>
+            <p>Phone: +123-456-7890</p>
+        </div>
+        <div class="footer-services">
+            <h3>Our Services</h3>
+            <p><a href="#service1">Adhesives</a></p>
+            <p><a href="#service2">Party Planning</a></p>
+            <p><a href="#service3">Woodworking</a></p>
+            <p><a href="#service4">Tag Creation</a></p>
+        </div>
+        <div class="footer-partners">
+            <h3>Our Partners</h3>
+            <img src="../images/partner1.png" alt="Partner 1" class="partner-logo">
+            <img src="../images/partner2.png" alt="Partner 2" class="partner-logo">
+            <img src="../images/partner3.png" alt="Partner 3" class="partner-logo">
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Niroukh Group. All rights reserved.</p>
+    </div>
+</footer>
 
-let scrollPosition = 0;
 
-function scrollSlider(direction) {
-    const cardWidth = document.querySelector('.card').offsetWidth + 20; // Includes margin
-    const maxScroll = slider.scrollWidth - slider.clientWidth;
 
-    if (direction === 'next') {
-        scrollPosition = Math.min(scrollPosition + cardWidth, maxScroll);
-    } else {
-        scrollPosition = Math.max(scrollPosition - cardWidth, 0);
-    }
+    <script src="scriptsdropdownmenu.js"></script>
 
-    slider.style.transform = `translateX(-${scrollPosition}px)`;
-}
 
-next.addEventListener('click', () => scrollSlider('next'));
-prev.addEventListener('click', () => scrollSlider('prev'));
-
-// Auto scroll every 5 seconds
-setInterval(() => scrollSlider('next'), 5000);
-
-</script>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.dropdown-content');
-            const hamburger = document.querySelector('.hamburger-menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            hamburger.classList.toggle('active');
-        }
-
-        function closeMenu(event) {
-            const menu = document.querySelector('.dropdown-content');
-            const hamburger = document.querySelector('.hamburger-menu');
-            const isClickInsideMenu = menu.contains(event.target) || hamburger.contains(event.target);
-            if (!isClickInsideMenu) {
-                menu.style.display = 'none';
-                hamburger.classList.remove('active');
-            }
-        }
-
-        document.addEventListener('click', closeMenu);
-    </script>
-        <script>
-            // Toggle Dark Mode
-            function toggleDarkMode() {
-                document.body.classList.toggle('dark-mode');
-                document.body.classList.toggle('light-mode');
-            }
-        </script>
+    
 </body>
 </html>
