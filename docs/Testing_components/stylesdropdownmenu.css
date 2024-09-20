@@ -60,7 +60,7 @@ body {
 /* Header */
 header {
     height: 60px;
-    background-color: var(--header-bg-color);
+    background-color: transparent;
     color: var(--text-color);
     display: flex;
     align-items: center;
